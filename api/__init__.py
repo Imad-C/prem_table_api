@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, request
 
-import api_helpers
+import api.api_helpers as helpers
 
 app = Flask(__name__)
-data = api_helpers.load_data()
+data = helpers.load_data()
 
 
 @app.get("/")
@@ -22,7 +22,7 @@ def teams():
 
 @app.get("/teams/<string:team_name>")
 def single_team(team_name):
-    response_data, status = api_helpers.get_team_all_seasons(data, team_name)
+    response_data, status = helpers.get_team_all_seasons(data, team_name)
     return jsonify({
         "success": True,
         "team": team_name,
@@ -41,7 +41,7 @@ def seasons():
 
 @app.get("/seasons/<string:season>")
 def single_season(season):
-    response_data, status = api_helpers.get_season_all_teams(data, season)
+    response_data, status = helpers.get_season_all_teams(data, season)
     return jsonify({
         "success": True,
         "season": season,
@@ -54,7 +54,7 @@ def make_query():
     query_filters = request.args.to_dict(flat=False)
     teams = query_filters['team'] if 'team' in query_filters else ['All']
     seasons = query_filters['season'] if 'season' in query_filters else ['All']
-    response_data, status = api_helpers.get_filtered(data, query_filters) 
+    response_data, status = helpers.get_filtered(data, query_filters) 
     
     return jsonify({
         "success": True,
