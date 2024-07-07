@@ -71,17 +71,3 @@ def handle_exception(e):
         "status": e.code,
         'message': e.description
         }), 400
-
-
-
-
-
-
-
-
-
-
-
-
-
-

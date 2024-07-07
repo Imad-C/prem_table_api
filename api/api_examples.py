@@ -47,7 +47,7 @@ check = custom_query.json()['data']['Arsenal']['2014/15'] # index into json
 
 # Error example
 query = (
-    "team=Manchester City&team=Best Team&" # no team called 'Best Team'
+    "team=Manchester City&team=FakeTeam&" # no team called 'FakeTeam'
     "season=2012-13&season=2013-14"
     )
 error_query = requests.get(url + 'query?' + query)

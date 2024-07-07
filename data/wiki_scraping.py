@@ -9,8 +9,7 @@ import pandas as pd
 
 
 def remove_affix(team_name: str) -> str: 
-    '''
-    Removes the (C) and (R) suffix for 'Champions' and 'Relegated'
+    '''Removes the (C) and (R) suffix for 'Champions' and 'Relegated'
     '''
     if ('(C)') in team_name or ('(R)') in team_name:
         team_name = team_name.rsplit(' ', 1)[0]
