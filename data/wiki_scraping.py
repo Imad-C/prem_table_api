@@ -22,8 +22,8 @@ if __name__ == '__main__':
     
     for year in range(1993, 2024):
         wiki_address = (
-            f"https://en.wikipedia.org/wiki/{year - 1}"
-            "%E2%80%93{str(year)[-2:]}_Premier_League"
+            f"https://en.wikipedia.org/wiki/{year-1}"
+            f"%E2%80%93{str(year)[-2:]}_Premier_League"
             )
         wiki_addresses.append(wiki_address)
     
@@ -33,6 +33,7 @@ if __name__ == '__main__':
     
     # looping through all addresses
     for address in wiki_addresses:
+        
         r = requests.get(address)
         soup = BeautifulSoup(r.text, features = 'lxml')
         
@@ -48,14 +49,14 @@ if __name__ == '__main__':
         
         # getting season year from string
         season_string = address.split('/')[-1].split('%')[0]
-        season_year = f'{season_string}/{str(int(season_string) + 1)[-2:]}'
+        season_year = f'{season_string}-{str(int(season_string) + 1)[-2:]}'
         df['Season'] = season_year
         
         #joining to main
         df_total = pd.concat([df_total, df], ignore_index = True)
         
         # progress check below
-        # print(f'season {season_string}/{str(int(season_string) + 1)[-2:]} complete')
+        print(f'season {season_string}/{str(int(season_string) + 1)[-2:]} complete')
     
     '''export to csv'''
     df_total.to_csv('data/df_total.csv', index = False)
