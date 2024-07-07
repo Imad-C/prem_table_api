@@ -47,8 +47,7 @@ def get_season_all_teams(
         ) -> dict:
     '''Gets all team results for a single season.
     '''
-    # clean input, check season is valid
-    season = season.replace('-', '/')
+    # check season is valid
     abort_non_existant([season], data['Season'].unique())  
     
     # filter, and transpose
@@ -84,9 +83,7 @@ def get_filtered(
     
     # filtering for specified seasons (none returns all)
     if 'season' in filter_dict:
-        # clean input, check seasons are valid
-        filter_dict['season'] =\
-            [x.replace('-', '/') for x in filter_dict['season']]
+        # check seasons are valid
         abort_non_existant(filter_dict['season'], data['Season'].unique())   
         
         # filtering

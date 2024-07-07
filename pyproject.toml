@@ -1,11 +1,18 @@
-[project]
-name = "api"
+[tool.poetry]
+name = "premier-league-table-api"
 version = "0.1"
-description = "Premier League Table api"
-dependencies = [
-    "flask",
-]
+description = "Flask api to call premier league table data"
+authors = ["Imad-C"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+pandas = "^2.2.2"
+Flask = "^3.0.3"
+bs4 = "^0.0.2"
+
 
 [build-system]
-requires = ["flit_core<4"]
-build-backend = "flit_core.buildapi"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

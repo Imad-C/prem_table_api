@@ -43,7 +43,7 @@ query = (
 custom_query = requests.get(url + 'query?' + query)
 print(custom_query.text)
 check = custom_query.json()['data']
-check = custom_query.json()['data']['Arsenal']['2014/15'] # index into json
+check = custom_query.json()['data']['Arsenal']['2014-15'] # index into json
 
 # Error example
 query = (
