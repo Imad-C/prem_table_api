@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "premier-league-table-api"
+name = "prem-table-api"
 version = "0.1"
 description = "Flask api to call premier league table data"
 authors = ["Imad-C"]
@@ -11,6 +11,7 @@ requests = "^2.32.3"
 pandas = "^2.2.2"
 Flask = "^3.0.3"
 bs4 = "^0.0.2"
+python-dotenv = "^1.0.1"
 
 
 [build-system]

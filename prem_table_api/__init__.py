@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 
-import api.api_helpers as helpers
+import prem_table_api.api_helpers as helpers
 
 app = Flask(__name__)
 data = helpers.load_data()
