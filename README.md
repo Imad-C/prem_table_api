@@ -2,7 +2,7 @@
 
 ## Description
 
-A Flask API to transfer data of the premier league table from 1992 - present. 
+A Flask API to transfer premier league table data from 1992 - present. 
 This was also a useful project to help me learn about Flask and API's.
 
 ## Installation
@@ -62,4 +62,10 @@ custom_query = requests.get("http://localhost:5000/query?" + query)
 data = custom_query.json()['data']['Arsenal']['2014-15']
 ```
 
-You can find further python examples in the prem_table_api/api_examples folder.
+You can find further python examples in the examples/api_examples file.
+
+## Example
+
+Below is a simple plot using data called through the API. The associated script
+can be found in the examples/example_usecase file.
+![plot](./examples/example_usecase.png)

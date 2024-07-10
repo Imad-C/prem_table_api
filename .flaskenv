@@ -1,2 +1,2 @@
 FLASK_APP=prem_table_api
-FLASK_DEBUG=True
+FLASK_DEBUG=False
